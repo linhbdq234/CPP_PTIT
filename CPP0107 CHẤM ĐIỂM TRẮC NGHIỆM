@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath> // Sử dụng thư viện <cmath> thay vì <math.h>
+#include<iomanip>
+using namespace std;
+
+void nhapdapan(char a[15]) { // Sửa kích thước mảng thành 15
+    for (int i = 0; i < 15; i++) {
+        cin >> a[i];
+    }
+}
+
+double diem(char a[15], char b[15]) { // Sửa kích thước mảng thành 15
+    int dem = 0;
+    for (int i = 0; i < 15; i++) {
+        if (a[i] == b[i]) dem++;
+    }
+    return dem * 10.00 / 15;
+}
+
+int main() {
+    int n, made;
+    char a1[] = {'A', 'B', 'B', 'A', 'D', 'C', 'C', 'A', 'B', 'D', 'C', 'C', 'A', 'B', 'D'}; // Đặt các ký tự trong dấu ngoặc đơn
+    char a2[] = {'A', 'C', 'C', 'A', 'B', 'C', 'D', 'D', 'B', 'B', 'C', 'D', 'D', 'B', 'B'}; // Đặt các ký tự trong dấu ngoặc đơn
+    char a3[15]; // Không cần gán giá trị ban đầu
+cin>>n;
+while(n--){
+    cin >> made;
+    nhapdapan(a3);
+
+    if (made == 101) // Sửa thành dấu so sánh bằng
+        cout << fixed<<setprecision(2)<<diem(a3, a1) << endl;
+    else
+         cout << fixed<<setprecision(2)<<diem(a3, a2) << endl;
+
+}
+
+    return 0; // Thêm lệnh trả về giá trị 0 để kết thúc chương trình
+}
+
